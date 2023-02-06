@@ -3,6 +3,12 @@ import {
     fetchSimulator,
     staticParserGenerateRequestArray,
 } from '#/src/js-homework/homeworks/parallel-query/utils';
+import * as SharedUtils from '#/src/shared/utils';
+
+jest.mock('#/src/shared/utils', () => ({
+    __esModule: true,
+    ...jest.requireActual('#/src/shared/utils'),
+}));
 
 type StaticParserTestCase = {
     testName: string;
@@ -42,9 +48,29 @@ describe('Тесты задачи "Параллельные запросы"', ()
         describe(`Статический парсер${
             isMayBeFailure ? IS_FAILURE_POSTFIX : IS_NOT_FAILURE_POSTFIX
         }`, () => {
+            afterEach(() => {
+                // restore the spy created with spyOn
+                jest.restoreAllMocks();
+            });
+
             STATIC_PARSER_TEST_CASES.forEach((testCase) => {
                 test(testCase.testName, () => {
                     const urls = staticParserGenerateRequestArray(testCase.urlListLength);
+
+                    if (isMayBeFailure) {
+                        const spyIsMoreRandomPercentage = jest.spyOn(
+                            SharedUtils,
+                            'isMoreRandomPercentage',
+                        );
+
+                        // Гарантируем падаение "моков" несколько раз, но без фанатизма.
+                        spyIsMoreRandomPercentage
+                            .mockReturnValue(false)
+                            .mockReturnValueOnce(true)
+                            .mockReturnValueOnce(true)
+                            .mockReturnValueOnce(true)
+                            .mockReturnValueOnce(true);
+                    }
 
                     return parallelQuery<string>({
                         urls,

@@ -1,6 +1,6 @@
-import { sortMaxToMinNumbers, sortMinToMaxNumbers } from './number-utils';
+import { sortMaxToMinNumbers, sortMinToMaxNumbers } from './array-utils';
 
-describe('Tests number-utils', () => {
+describe('Tests array-utils', () => {
     test('Test sortMinToMaxNumbers. input [3, 4, 5, 2, 1] must return [1, 2, 3, 4, 5]', () => {
         expect(sortMinToMaxNumbers([3, 4, 5, 2, 1])).toEqual([1, 2, 3, 4, 5]);
     });

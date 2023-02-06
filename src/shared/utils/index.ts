@@ -1,1 +1,2 @@
-export * from './number-utils';
+export * from './array-utils';
+export * from './help-utils';

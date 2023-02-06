@@ -1,3 +1,5 @@
+import { isMoreRandomPercentage } from '#/src/shared/utils';
+
 /**
  * Параметры передаваемые в метод симуляции поведения асинхронного запроса.
  *
@@ -16,7 +18,7 @@ export type FetchSimulatorProps<Request> = {
  */
 export const fetchSimulator = <Request>(props: FetchSimulatorProps<Request>): Promise<Request> =>
     new Promise<Request>((resolve, reject) => {
-        const isFailure = props.isMayBeFailure && Math.random() * 100 > 95;
+        const isFailure = props.isMayBeFailure && isMoreRandomPercentage(95);
         const requestExecutionTime = Math.random() * (isFailure ? 300 : 600);
 
         setTimeout(() => {
