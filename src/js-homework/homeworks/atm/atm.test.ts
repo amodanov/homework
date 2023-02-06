@@ -64,7 +64,7 @@ const ATM_TEST_CASES: ATMTestCase[] = [
     },
 ];
 
-describe('Тесты функции банкомата', () => {
+describe('Тесты задачи "Банкомат"', () => {
     const currencyDenominations: CurrencyDenomination[] = [5000, 1000, 500, 100, 50];
     let denominationLimit: DenominationLimit = {
         5000: 0,
