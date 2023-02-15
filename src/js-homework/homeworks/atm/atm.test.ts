@@ -1,6 +1,9 @@
 import { INCORRECT_VALUE, NOT_ENOUGH_MONEY } from '#/src/js-homework/homeworks/atm/const';
 import { atm } from '#/src/js-homework/homeworks/atm/index';
-import { CurrencyDenomination, DenominationLimit } from '#/src/js-homework/homeworks/atm/models';
+import type {
+    CurrencyDenomination,
+    DenominationLimit,
+} from '#/src/js-homework/homeworks/atm/models';
 import { manualRecalculationDenominationLimit } from '#/src/js-homework/homeworks/atm/utils';
 
 type ATMTestCase = {

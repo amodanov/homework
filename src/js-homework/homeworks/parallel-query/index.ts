@@ -1,4 +1,4 @@
-import { ParallelQueryProps } from '#/src/js-homework/homeworks/parallel-query/models';
+import type { ParallelQueryProps } from '#/src/js-homework/homeworks/parallel-query/models';
 
 /**
  * Нормализация индекса границы.

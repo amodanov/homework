@@ -1,4 +1,4 @@
-import { DenominationLimit } from '#/src/js-homework/homeworks/atm/models';
+import type { DenominationLimit } from '#/src/js-homework/homeworks/atm/models';
 import { manualRecalculationDenominationLimit } from '#/src/js-homework/homeworks/atm/utils/test-utils';
 
 describe('Тесты утилиты для автоматизации тестирования', () => {

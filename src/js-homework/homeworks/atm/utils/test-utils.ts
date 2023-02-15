@@ -1,4 +1,7 @@
-import { CurrencyDenomination, DenominationLimit } from '#/src/js-homework/homeworks/atm/models';
+import type {
+    CurrencyDenomination,
+    DenominationLimit,
+} from '#/src/js-homework/homeworks/atm/models';
 
 /**
  * Метод ручного вычета количества купюр из лимитов, по количеству выданных купюр клиенту.

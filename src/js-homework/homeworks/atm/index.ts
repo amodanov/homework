@@ -1,5 +1,8 @@
 import { INCORRECT_VALUE, NOT_ENOUGH_MONEY } from '#/src/js-homework/homeworks/atm/const';
-import { CurrencyDenomination, DenominationLimit } from '#/src/js-homework/homeworks/atm/models';
+import type {
+    CurrencyDenomination,
+    DenominationLimit,
+} from '#/src/js-homework/homeworks/atm/models';
 import { getTheMinimumAvailableDivisor } from '#/src/js-homework/homeworks/atm/utils';
 import { sortMaxToMinNumbers } from '#/src/shared/utils';
 
